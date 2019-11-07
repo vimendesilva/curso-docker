@@ -36,3 +36,11 @@ Para ver todos containers, inclusive os parados, adicionamos a flag -a ao comand
 Então, quando executamos o container do Ubuntu, precisamos passar para ele um comando que rode dentro dele, por exemplo:
 `docker run ubuntu echo "Ola Mundo"`
 
+Trabalhando dentro de um container
+
+Podemos fazer com que o terminal da nossa máquina seja integrado ao terminal de dentro do container, para ficar um terminal interativo, usando o comando `docker run -it ubuntu`.
+
+Com isso, estamos trabalhando dentro do container. E dentro dele, podemos trabalhar como se estivéssemos trabalhando dentro do terminal de um Ubuntu, executando comandos como ls, cat, etc.
+
+Agora, se abrirmos outro terminal e executar o comando docker ps, veremos o container que estamos executando. Podemos parar a sua execução, digitando no container o comando exit ou através do atalho CTRL + D .
+
