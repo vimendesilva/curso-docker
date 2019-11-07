@@ -36,11 +36,21 @@ Para ver todos containers, inclusive os parados, adicionamos a flag -a ao comand
 Então, quando executamos o container do Ubuntu, precisamos passar para ele um comando que rode dentro dele, por exemplo:
 `docker run ubuntu echo "Ola Mundo"`
 
-Trabalhando dentro de um container
-
 Podemos fazer com que o terminal da nossa máquina seja integrado ao terminal de dentro do container, para ficar um terminal interativo, usando o comando `docker run -it ubuntu`.
 
 Com isso, estamos trabalhando dentro do container. E dentro dele, podemos trabalhar como se estivéssemos trabalhando dentro do terminal de um Ubuntu, executando comandos como ls, cat, etc.
 
-Agora, se abrirmos outro terminal e executar o comando docker ps, veremos o container que estamos executando. Podemos parar a sua execução, digitando no container o comando exit ou através do atalho CTRL + D .
+Agora, se abrirmos outro terminal e executar o comando docker ps, veremos o container que estamos executando. Podemos parar a sua execução, digitando no container o comando exit ou através do atalho CTRL + D.
 
+- Executando novamente um container
+
+Para iniciar um container que está parado, pegamos o id do container a ser iniciado, e passamos ao comando docker start: `docker start 05025384675e`
+Para pausar o container, é usado o comando: `docker stop 05025384675e`
+
+Para iniciar novamente o container, deixando o terminal interativo, é utilizado o comando docker start passando duas flags: -a, de *attach*, para integrar os terminais, e -i, de *interactive*, para interagirmos com o terminal, para podermos escrever nele: `docker start -a -i 05025384675e` 
+
+**Trabalhando com imagem site estático**
+
+Utilizando o comando: `docker run -d -P dockersamples/static-site`, uma nova imagem nomeada 'static-site' pertencente ao usuário 'dockersamples' é baixada. A tag -P fará com que o Docker atribua uma porta aleatória do mundo externo, que no caso é a nossa máquina, para poder se comunicar com o que está dentro do container. E a tag -d fará com que o site rode em segundo plano, sem travar o terminal.
+
+Ao executar o comando `docker ps`, é possível visualizar a porta (coluna PORTS) em que o site está rodando, para que possa ser acessada pelo navegador.
