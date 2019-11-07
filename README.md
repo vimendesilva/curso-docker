@@ -2,6 +2,8 @@
 
 **Instalação no Windows**
 
+[Docker for Windows](https://hub.docker.com/editions/community/docker-ce-desktop-windows)
+
 Requisitos
 - Arquitetura 64 bits
 - Versão *Pro*, *Enterprise* ou *Education*.
