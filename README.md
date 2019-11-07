@@ -54,3 +54,5 @@ Para iniciar novamente o container, deixando o terminal interativo, é utilizado
 Utilizando o comando: `docker run -d -P dockersamples/static-site`, uma nova imagem nomeada 'static-site' pertencente ao usuário 'dockersamples' é baixada. A tag -P fará com que o Docker atribua uma porta aleatória do mundo externo, que no caso é a nossa máquina, para poder se comunicar com o que está dentro do container. E a tag -d fará com que o site rode em segundo plano, sem travar o terminal.
 
 Ao executar o comando `docker ps`, é possível visualizar a porta (coluna PORTS) em que o site está rodando, para que possa ser acessada pelo navegador.
+
+**Referência**: https://cursos.alura.com.br/
