@@ -1,6 +1,6 @@
 # curso-docker
 
-**Instalação no Windows**
+## **1. Instalação no Windows**
 
 [Docker for Windows](https://hub.docker.com/editions/community/docker-ce-desktop-windows)
 
@@ -23,7 +23,7 @@ No terminal, podemos executar os seguintes comandos:
 
 Caso você tenha tido algum problema em instalar o Docker em sua máquina, você também tem a opção de utilizar o [Play With Docker](https://labs.play-with-docker.com/). Nele você poderá utilizar os comandos vistos daqui em diante e testar as diversas funcionalidades que o Docker proporciona. Ao acessar o site basta clicar em +Add New Instance e começar a utilizá-lo como estivesse usando sua máquina normalmente.
 
-**Trabalhando com as imagens**
+## **2. Trabalhando com as imagens**
 
 Anteriormente, rodamos a imagem *hello-world* no container. 
 Podemos executar a imagem do Ubuntu utilizando o comando `docker run ubuntu`
@@ -49,13 +49,13 @@ Para pausar o container, é usado o comando: `docker stop 05025384675e`
 
 Para iniciar novamente o container, deixando o terminal interativo, é utilizado o comando docker start passando duas flags: -a, de *attach*, para integrar os terminais, e -i, de *interactive*, para interagirmos com o terminal, para podermos escrever nele: `docker start -a -i 05025384675e` 
 
-**Trabalhando com imagem site estático**
+## **2.1 Trabalhando com imagem site estático**
 
 Utilizando o comando: `docker run -d -P dockersamples/static-site`, uma nova imagem nomeada 'static-site' pertencente ao usuário 'dockersamples' é baixada. A tag -P fará com que o Docker atribua uma porta aleatória do mundo externo, que no caso é a nossa máquina, para poder se comunicar com o que está dentro do container. E a tag -d fará com que o site rode em segundo plano, sem travar o terminal.
 
 Ao executar o comando `docker ps`, é possível visualizar a porta (coluna PORTS) em que o site está rodando, para que possa ser acessada pelo navegador.
 
-## **03. Usando Volumes:**
+## **3. Usando Volumes:**
 
 Vimos que os *containers*  funcionam como uma pequena camada de leitura e escrita, em cima das imagens, sendo somente para leitura. Quando removemos um container com o comando **docker rm**, a camada de leitura e escrita também é removida, o que faz com que os dados também sejam removidos. Por exemplo: pense em um banco de dados, toda vez que o container desse banco for removido, todos os nossos dados persistidos nele será perdido? Por isso precisamos ter um lugar para salvar esses dados, e esse lugar são os **Volumes**, já que é da natureza dos containers ser voláteis.
 
@@ -127,7 +127,7 @@ Isto é, o **package.json** não foi encontrado, mas ele está dentro da pasta d
         
 Agora, ao acessar a porta 8080 no navegador, vemos uma página exibindo a mensagem Eu amo Docker!. E para testar que está mesmo funcionando, podemos editar o arquivo index.html localmente, salvá-lo e ao recarregar a página no navegador, a nova mensagem é exibida! Com isso concluimos que podemos criar um ambiente de desenvolvimento todo baseado em containers, já que todos utilizam, todos terão o mesmo ambiente de desenvolvimento.
 
-## **0.4 Construindo nossas próprias imagens**
+## **4 Construindo nossas próprias imagens**
 
 Conforme vimos anteriormente, a imagem é como se fosse uma receita de bolo. Portanto, para criarmos a nossa própria imagem, precisamos criar nossa receita de bolo, o **Dockerfile**. Então, no projeto que estamos usando, temos que criar o arquivo **Dockerfile**, que nada mais é do que um arquivo texto, ele pode ter qualquer nome, porém deve possuir a extensão .dockerfile, por exemplo node.dockerfile, mas vamos manter o nome padrão mesmo.
 
@@ -189,7 +189,7 @@ Com isso, finalizamos o **Dockerfile**, baseado no comando que fizemos na aula a
         
 *Obs: *o comando **pwd** mostra o caminho da pasta que você está, usado como recurso de interpolação de comandos, através de um comando, chama-se outro.*
 
-### **0.4.1 Criando a imagem**
+### **4.1 Criando a imagem**
 
 Para criar a imagem, precisamos fazer o seu build através do comando **docker build**, usado para buildar uma imagem a partir de um **Dockerfile**. Para configurar, passamos o nome do Dockerfile através da flag **-f**:
 
@@ -205,7 +205,7 @@ E agora dizemos onde está o **Dockerfile**. Como já estamos rodando o comando 
         
 Ao executar o comando, podemos perceber que cada instrução executada do nosso **Dockerfile** possui um id. Cada instrução gera uma nova camada, que fará parte da imagem final, que nada mais é do que a imagem-base com vários containers intermediários em cima, sendo que cada um desses containers representa um comando do **Dockerfile**. Assim, se um dia a imagem precisar ser alterada, somente o container referente à instrução modificada será alterado, com as outras partes intermediárias da imagem já prontas.
 
-### **0.4.2 Criando um container a partir da nossa imagem**
+### **4.2 Criando um container a partir da nossa imagem**
 
 Agora que já temos a imagem criada, podemos criar um container a partir dela:
 
@@ -235,7 +235,7 @@ E aí no próprio Dockerfile, podemos utilizar essa variável:
         
 E como modificamos o **Dockerfile**, precisamos construir a nossa imagem novamente e podemos perceber que dessa vez o comando é bem mais rápido, já que quase todas as camadas estão cacheadas pelo Docker. Agora que criamos a imagem, vamos disponibilizá-la para outras pessoas.
 
-### **0.4.3 Subindo a imagem do Docker Hub**
+### **4.3 Subindo a imagem do Docker Hub**
 
 Para disponibilizar a imagem para outras pessoas, precisamos enviá-la para o **Docker Hub** (serviço de registro em nuvem que permite ao desenvolvedor criar repositórios de imagens docker semelhante ao GitHub). O primeiro passo é criar a nossa conta. Com ela criada, executamos o comando **docker login** e digitamos o nosso login e senha que acabamos de criar. Após isso basta executar o comando **docker push**, passando para ele a imagem que queremos subir, por exemplo:
 
