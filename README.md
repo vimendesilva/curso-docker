@@ -15,6 +15,8 @@ Seguimos o passo a passo do instalador para aceitar a licença, autorizamos o in
 
 O Docker pode demorar um pouco para inicializar, mas quando a mensagem Docker *is running* for exibida, significa que ele foi instalado com sucesso e já podemos utilizá-lo.
 
+Para continuar os comandos, verifique se nas opções do docker, a opção 'Switch to Linux containers...' está habilitada.
+
 *Hello World*
 
 No terminal, podemos executar os seguintes comandos:
@@ -127,7 +129,7 @@ Isto é, o **package.json** não foi encontrado, mas ele está dentro da pasta d
         
 Agora, ao acessar a porta 8080 no navegador, vemos uma página exibindo a mensagem Eu amo Docker!. E para testar que está mesmo funcionando, podemos editar o arquivo index.html localmente, salvá-lo e ao recarregar a página no navegador, a nova mensagem é exibida! Com isso concluimos que podemos criar um ambiente de desenvolvimento todo baseado em containers, já que todos utilizam, todos terão o mesmo ambiente de desenvolvimento.
 
-## **4 Construindo nossas próprias imagens**
+## **4. Construindo nossas próprias imagens**
 
 Conforme vimos anteriormente, a imagem é como se fosse uma receita de bolo. Portanto, para criarmos a nossa própria imagem, precisamos criar nossa receita de bolo, o **Dockerfile**. Então, no projeto que estamos usando, temos que criar o arquivo **Dockerfile**, que nada mais é do que um arquivo texto, ele pode ter qualquer nome, porém deve possuir a extensão .dockerfile, por exemplo node.dockerfile, mas vamos manter o nome padrão mesmo.
 
