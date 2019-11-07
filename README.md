@@ -101,7 +101,7 @@ Quando acessarmos nosso Desktop, o arquivo estará lá com a mensagem escrita de
 
 Percebemos que isso nos dá a possibilidade de implementar localmente um código de uma linguagem que não está instalada na nossa máquina, e colocá-lo para compilar e rodar dentro de um container. Se ele pussuir Node, Java, PHP, nosso ambiente de desenvolvimento será dentro de dele mesmo. Então vamos lá!
 
-Iremos usar um exemplo escrito em **Node.js** que pode ser baixado AQUI. Até podemos executar esse código na nossa máquina, mas temos que instalar o Node na versão certa em que o desenvolvedor implementou o código. Agora como fazemos para criar um container, que irá pegar e rodar esse código Node que está na nossa máquina? Vamos usar os volumes. Primeiro vamos rodar um código em Node.js, precisamos usar a sua imagem através do comando:
+Iremos usar um exemplo escrito em **Node.js** que pode ser baixado [AQUI](https://github.com/vimendesilva/curso-docker/tree/master/volume-exemplo). Até podemos executar esse código na nossa máquina, mas temos que instalar o Node na versão certa em que o desenvolvedor implementou o código.  Após o download, abra o projeto e rode o comando: `npm install` para que a pasta node_modules esteja no projeto. Agora como fazemos para criar um container, que irá pegar e rodar esse código Node que está na nossa máquina? Vamos usar os volumes. Primeiro vamos rodar um código em Node.js, precisamos usar a sua imagem através do comando:
 
         docker run node
     
