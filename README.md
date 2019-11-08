@@ -1,5 +1,7 @@
 # curso-docker
 
+![Docker](https://github.com/vimendesilva/curso-docker/blob/master/docker.png)
+
 ## **1. Instalação no Windows**
 
 [Docker for Windows](https://hub.docker.com/editions/community/docker-ce-desktop-windows)
@@ -109,10 +111,7 @@ Além disso, precisamos criar um volume, que referencie à pasta do código no n
 
         docker run -v "C:\Users\Alura\Desktop\volume-exemplo:/var/www" node
     
-Agora, para iniciar o seu servidor, executamos o comando **npm start**. Para executar um comando dentro do container, podemos iniciá-lo no modo interativo ou passá-lo no final do **docker run**:
-
-        docker run -v "C:\Users\Alura\Desktop\volume-exemplo:/var/www" node npm start
-        
+Agora, para iniciar o seu servidor, executamos o comando **npm start**. Para executar um comando dentro do container, podemos iniciá-lo no modo interativo ou passá-lo no final do **docker run**.      
 
 Por fim, esse servidor roda na porta 3000, então precisamos linkar essa porta a uma porta do nosso computador, no caso a 8080. O comando ficará assim:
 
