@@ -200,10 +200,6 @@ Além disso, passamos a tag da imagem, o seu nome, através da flag **-t**. Já 
 
         docker build -f Dockerfile -t nome_usuario/node
         
-E agora dizemos onde está o **Dockerfile**. Como já estamos rodando o comando dentro da pasta **volume-exemplo**, vamos utilizar o ponto **(.)**;
-
-        docker build -f Dockerfile -t nome_usuario/node .
-        
 Ao executar o comando, podemos perceber que cada instrução executada do nosso **Dockerfile** possui um id. Cada instrução gera uma nova camada, que fará parte da imagem final, que nada mais é do que a imagem-base com vários containers intermediários em cima, sendo que cada um desses containers representa um comando do **Dockerfile**. Assim, se um dia a imagem precisar ser alterada, somente o container referente à instrução modificada será alterado, com as outras partes intermediárias da imagem já prontas.
 
 ### **4.2 Criando um container a partir da nossa imagem**
