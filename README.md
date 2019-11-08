@@ -251,7 +251,7 @@ Por fim, ao acessar a nossa conta do **Docker Hub**, podemos ver que a imagem es
     
     docker pull nome_usuario/node
     
-Então, esse é um jeito de simples de compartilharmos uma imagem com outras pessoas, através do **Docker Hub**. A imagem é disponibilizada em um repositório público, mas também podemos disponibilizar em repositórios privados, que no momento da criação do curso, cada usuário pode criar um repositório privado gratuitamente.
+Então, esse é um jeito simples de compartilharmos uma imagem com outras pessoas, através do **Docker Hub**. A imagem é disponibilizada em um repositório público, mas também podemos disponibilizar em repositórios privados, que no momento da criação do curso, cada usuário pode criar um repositório privado gratuitamente.
 
 ### **Referências Bibliográficas:**
 
